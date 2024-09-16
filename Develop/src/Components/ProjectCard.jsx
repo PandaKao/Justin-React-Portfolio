@@ -8,28 +8,48 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Chip from '@mui/material/Chip';
 
+const styles = {
+    card: {
+      background: 'transparent',
+      borderRadius: '12px',
+    },
+    image: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      opacity: '1'
+  
+    },
+    icons: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      padding: '5px'
+    }
+  };
+
 export default function ProjectCard({ img, title, description, github, website, chips }) {
     return (
-        <Card elevation={5}>
+        <Card style={styles.card} elevation={5}>
             <div>
                 <Button
-                    size="small"
+                    size='small'
                     sx={{ color: 'black' }}
-                    aria-label="github repository"
+                    aria-label='github repository'
                     href={github}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target='_blank'
+                    rel='noopener noreferrer'
                 >
                     <GitHubIcon />
                 </Button>
                 {website && (
                     <Button
-                        size="small"
+                        size='small'
                         sx={{ color: 'black' }}
-                        aria-label="active web application"
+                        aria-label='active web application'
                         href={website}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                     >
                         <ArrowOutwardIcon />View Site
                     </Button>
@@ -37,14 +57,14 @@ export default function ProjectCard({ img, title, description, github, website, 
             </div>
             <div>
                 {img && <CardMedia
-                    component="img"
+                    component='img'
                     alt={title}
                     image={img}
                 />}
             </div>
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ color: 'black' }}>{title}</Typography>
-                <Typography variant="body2">{description}</Typography>
+                <Typography gutterBottom variant='h5' component='div' sx={{ color: 'black' }}>{title}</Typography>
+                <Typography variant='body2'>{description}</Typography>
             </CardContent>
             <CardActions>
                 <div>
