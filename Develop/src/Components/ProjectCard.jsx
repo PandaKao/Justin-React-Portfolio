@@ -11,27 +11,30 @@ import Chip from '@mui/material/Chip';
 const styles = {
     card: {
       background: 'transparent',
-      borderRadius: '12px',
+      borderRadius: 2,
+    },
+    container: {
+        height: '100%',
+        weight: '100%',
+        overflow: 'hidden',
     },
     image: {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
-      opacity: '1'
-  
     },
     icons: {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      padding: '5px'
+      padding: '5px',
     }
   };
 
 export default function ProjectCard({ img, title, description, github, website, chips }) {
     return (
         <Card style={styles.card} elevation={5}>
-            <div>
+            <div style={styles.icons}>
                 <Button
                     size='small'
                     sx={{ color: 'black' }}
@@ -55,7 +58,7 @@ export default function ProjectCard({ img, title, description, github, website, 
                     </Button>
                 )}
             </div>
-            <div>
+            <div style={styles.container}>
                 {img && <CardMedia
                     component='img'
                     alt={title}

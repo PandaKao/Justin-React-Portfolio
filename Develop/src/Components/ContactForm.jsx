@@ -1,12 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import emailjs from '@emailjs/browser';
 import { validateEmail } from '../Utils/validation.js';
 
@@ -89,21 +87,34 @@ export default function ContactForm() {
         }
     };
 
+    const handleReset = (event) => {
+        event.preventDefault();
+        setNotification({ message: '', color: '' });
+        setFormState({ fullName: '', email: '', message: '' });
+        fullNameRef.current?.blur();
+        emailRef.current?.blur();
+        messageRef.current?.blur();
+    }
+
     return (
-        <Container id='contact' component='main' maxWidth='xs' sx={{
+        <Box id='contact' sx={{
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
-            alignItems: 'center'
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+            width: '100%',
         }}>
-            <CssBaseline />
             <Box
                 sx={{
-                    marginTop: 8,
+                    padding: 5,
                     display: 'flex',
                     flexDirection: 'column',
+                    justifyContent: 'center',
                     alignItems: 'center',
-                    width: '100%'
+                    borderRadius: 2,
+                    boxShadow: 10,
+                    width: '60%',
                 }}
             >
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -112,9 +123,9 @@ export default function ContactForm() {
                 <Typography component='h1' variant='h5'>
                     Contact Me
                 </Typography>
-                <Box ref={formRef} component='form' noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-                    <Grid container>
-                        <Grid item xs={12} sx={{ mb: 2 }}>
+                <Box ref={formRef} component='form' noValidate onSubmit={handleSubmit} sx={{ mt: 3, width: '100%' }}>
+                    <Grid container spacing={2}>
+                        <Grid item size={{xs: 12}}>
                             <TextField
                                 name='fullName'
                                 required
@@ -126,7 +137,7 @@ export default function ContactForm() {
                                 inputRef={fullNameRef}
                             />
                         </Grid>
-                        <Grid item xs={12} sx={{ mb: 2 }}>
+                        <Grid item size={{ xs: 12 }}>
                             <TextField
                                 name='email'
                                 required
@@ -137,7 +148,7 @@ export default function ContactForm() {
                                 inputRef={emailRef}
                             />
                         </Grid>
-                        <Grid item xs={12} sx={{ mb: 2 }}>
+                        <Grid item size={{ xs: 12 }}>
                             <TextField
                                 name='message'
                                 required
@@ -151,18 +162,29 @@ export default function ContactForm() {
                             />
                         </Grid>
                     </Grid>
-                    <Button
-                        type='submit'
-                        fullWidth
-                        variant='contained'
-                        sx={{ mb: 2 }}
-                        disabled={!isFormValid}
-                    >
-                        Submit
-                    </Button>
+                    <Grid container spacing={2} justifyContent='space-between' style={{ marginTop: 20 }}>
+                        <Grid item>
+                            <Button
+                                type='reset'
+                                variant='contained'
+                                onClick={handleReset}>
+                                Reset
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button
+                                type='submit'
+                                variant='contained'
+                                disabled={!isFormValid}
+                            >
+                                Submit
+                            </Button>
+                        </Grid>
+                    </Grid>
+
                 </Box>
             </Box>
             {notification.message && <Typography ref={notiRef} sx={{ mt: 2, color: notification.color }}>{notification.message}</Typography>}
-        </Container>
+        </Box>
     );
 }

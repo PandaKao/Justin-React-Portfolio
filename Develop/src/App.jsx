@@ -1,5 +1,6 @@
-import { Grid } from '@mui/material';
-import NavBar from './Components/NavBar.jsx';
+import Grid from '@mui/material/Grid2';
+import NavBarLeft from './Components/NavBarLeft.jsx';
+import SocialBarRight from './Components/SocialBarRight.jsx'
 import Header from './Components/Header.jsx';
 import AboutMe from './Components/AboutMe.jsx'
 import Projects from './Components/Projects.jsx';
@@ -9,16 +10,18 @@ function App() {
   return (
     <>
       <main>
-        <Grid container style={{ height: '190vh' }}>
-          <Grid item xs={1}>
-            <NavBar />
+        <Grid container spacing={2}>
+          <Grid item size={{xs:1}}>
+            <NavBarLeft />
           </Grid>
-
-          <Grid item xs={10}>
+          <Grid item size={{xs:10}}>
             <Header />
             <AboutMe />
             <Projects />
             <ContactForm />
+          </Grid>
+          <Grid item size={{xs:1}}>
+            <SocialBarRight />
           </Grid>
         </Grid>
 

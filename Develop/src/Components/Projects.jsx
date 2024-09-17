@@ -1,11 +1,11 @@
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import { Grow } from '@mui/material';
 import ProjectCard from './ProjectCard.jsx';
 
 const projectData = [
     {
         //need to fill with image, title, github link, website, chip
-        img: 'https://placedog.net/500',
+        img: 'https://placedog.net/494',
         title: 'Portfolio1',
         description: 'A personal portfolio built with React, showcasing a diverse range of projects',
         github: 'https://placedog.net/500',
@@ -13,7 +13,7 @@ const projectData = [
         chips: ['React.js', 'Material UI']
     },
     {
-        img: 'https://placedog.net/495',
+        img: 'https://placedog.net/499',
         title: 'Portfolio2',
         description: 'A personal portfolio built with React, showcasing a diverse range of projects',
         github: 'https://placedog.net/500',
@@ -21,7 +21,7 @@ const projectData = [
         chips: ['React.js', 'Material UI']
     },
     {
-        img: 'https://placedog.net/496',
+        img: 'https://placedog.net/498',
         title: 'Portfolio3',
         description: 'A personal portfolio built with React, showcasing a diverse range of projects',
         github: 'https://placedog.net/500',
@@ -37,7 +37,7 @@ const projectData = [
         chips: ['React.js', 'Material UI']
     },
     {
-        img: 'https://placedog.net/498',
+        img: 'https://placedog.net/496',
         title: 'Portfolio5',
         description: 'A personal portfolio built with React, showcasing a diverse range of projects',
         github: 'https://placedog.net/500',
@@ -45,7 +45,7 @@ const projectData = [
         chips: ['React.js', 'Material UI']
     },
     {
-        img: 'https://placedog.net/499',
+        img: 'https://placedog.net/495',
         title: 'Portfolio6',
         description: 'A personal portfolio built with React, showcasing a diverse range of projects',
         github: 'https://placedog.net/500',
@@ -66,11 +66,9 @@ export default function Projects() {
                 in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.</p>
             <Grid container spacing={4} justifyContent='center' sx={{ flexWrap: 'wrap' }}>
                 {projectData.map((project, index) => (
-                    <Grow key={index} in={true} timeout={1500 * index}>
-                        <Grid key={index} item xs={12} sm={6} md={6} lg={6} xl={4}>
+                        <Grid key={index} item size={{xs:12, sm:6, md:6, lg:6, xl:4}}>
                             <ProjectCard {...project} />
                         </Grid>
-                    </Grow>
                 ))}
             </Grid>
         </>
