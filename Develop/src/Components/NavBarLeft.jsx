@@ -63,7 +63,7 @@ export default function NavBarLeft() {
         <ul style={styles.items}>
           {navItems.map((item, index) => (
             <li key={index}>
-              <Button>
+              <Button sx={{color: '#ffffff'}}>
                 <ScrollLink
                   to={item.target}
                   spy={true}

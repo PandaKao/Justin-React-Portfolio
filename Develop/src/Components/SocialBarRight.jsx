@@ -36,7 +36,11 @@ const styles = {
     fab: {
         marginTop: '15px',
         background: 'transparent',
+        color: '#ffffff',
         boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)',
+        '&:hover': {
+            backgroundColor: '#000000',
+        }
     },
 };
 

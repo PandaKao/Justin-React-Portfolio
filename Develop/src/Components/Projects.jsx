@@ -1,5 +1,5 @@
 import Grid from '@mui/material/Grid2';
-import { Grow } from '@mui/material';
+import Box from '@mui/material/Box';
 import ProjectCard from './ProjectCard.jsx';
 
 const projectData = [
@@ -57,20 +57,18 @@ const projectData = [
 export default function Projects() {
     return (
         <>
-            <h2 id='projects'>Projects</h2>
-            <p>Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-                Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-                mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-                lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-                imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-                in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.</p>
-            <Grid container spacing={4} justifyContent='center' sx={{ flexWrap: 'wrap' }}>
-                {projectData.map((project, index) => (
-                        <Grid key={index} item size={{xs:12, sm:6, md:6, lg:6, xl:4}}>
+            <Box id='projects' sx={{ padding: 4, height: 'auto', minHeight: '100vh' }}>
+                <h2>Projects</h2>
+                <p>These are the projects I’ve developed both individually and as part of a team. They challenged me to engage with front-end, back-end, and full-stack development, enabling me to create everything from intuitive user interfaces to comprehensive end-to-end solutions.</p>
+                <Grid container spacing={4} justifyContent='center' sx={{ flexWrap: 'wrap' }}>
+                    {projectData.map((project, index) => (
+                        <Grid key={index} item size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 4 }}>
                             <ProjectCard {...project} />
                         </Grid>
-                ))}
-            </Grid>
+                    ))}
+                </Grid>
+            </Box>
+
         </>
     );
 }

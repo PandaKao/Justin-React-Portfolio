@@ -12,16 +12,13 @@ const styles = {
     card: {
       background: 'transparent',
       borderRadius: 2,
+      border: '1px solid #000',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
     },
     container: {
         height: '100%',
         weight: '100%',
         overflow: 'hidden',
-    },
-    image: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
     },
     icons: {
       display: 'flex',
@@ -37,7 +34,7 @@ export default function ProjectCard({ img, title, description, github, website, 
             <div style={styles.icons}>
                 <Button
                     size='small'
-                    sx={{ color: 'black' }}
+                    sx={{ color: '#ffffff' }}
                     aria-label='github repository'
                     href={github}
                     target='_blank'
@@ -48,7 +45,7 @@ export default function ProjectCard({ img, title, description, github, website, 
                 {website && (
                     <Button
                         size='small'
-                        sx={{ color: 'black' }}
+                        sx={{ color: '#ffffff' }}
                         aria-label='active web application'
                         href={website}
                         target='_blank'
@@ -66,13 +63,13 @@ export default function ProjectCard({ img, title, description, github, website, 
                 />}
             </div>
             <CardContent>
-                <Typography gutterBottom variant='h5' component='div' sx={{ color: 'black' }}>{title}</Typography>
+                <Typography gutterBottom variant='h5' component='div' sx={{ color: '#ffffff' }}>{title}</Typography>
                 <Typography variant='body2'>{description}</Typography>
             </CardContent>
             <CardActions>
                 <div>
                     {chips.map((chip, index) => (
-                        <Chip key={index} label={chip} style={{ marginRight: '0.02rem', marginBottom: '0.5rem', color: 'black' }} />
+                        <Chip key={index} label={chip} style={{ marginRight: '1rem', marginBottom: '0.5rem', color: '#ffffff', border: '1px solid #000' }} />
                     ))}
                 </div>
             </CardActions>

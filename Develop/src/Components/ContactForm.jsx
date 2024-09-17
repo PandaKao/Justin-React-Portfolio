@@ -102,6 +102,7 @@ export default function ContactForm() {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
+            padding: 4,
             height: '100vh',
             width: '100%',
         }}>
@@ -115,11 +116,9 @@ export default function ContactForm() {
                     borderRadius: 2,
                     boxShadow: 10,
                     width: '60%',
+                    backgroundColor: 'rgba(255, 255, 255, 0.4)',
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                    {/* <LockOutlinedIcon /> */}
-                </Avatar>
                 <Typography component='h1' variant='h5'>
                     Contact Me
                 </Typography>

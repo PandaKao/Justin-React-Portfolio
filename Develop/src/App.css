@@ -1,0 +1,117 @@
+#root {
+    margin: 0;
+    padding: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: white;
+    margin: 0;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.intro {
+    margin-top: 12rem;
+    margin-bottom: 18rem;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .intro {
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+    }
+
+}
+
+/* body {
+    background: linear-gradient(200deg,#5EB1BF,#042A2B, #5D576B, #8884FF);
+    background-size: 240% 240%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+        background-position: 50% 0%;
+      }
+      25% {
+        background-position: 50% 50%;
+      }
+      50% {
+        background-position: 50% 100%;
+      }
+      75% {
+        background-position: 50% 50%;
+      }
+      100% {
+        background-position: 50% 0%;
+      }
+  } */
+
+body {
+    background:
+        linear-gradient(105deg, #5EB1BF, #0a5153, #5D576B, #8884FF),
+        linear-gradient(105deg, rgba(94, 177, 191, 0.7), rgba(4, 42, 43, 0.7), rgba(93, 87, 107, 0.7), rgba(136, 132, 255, 0.7)),
+        linear-gradient(105deg, rgba(94, 177, 191, 0.4), rgba(4, 42, 43, 0.4), rgba(93, 87, 107, 0.4), rgba(136, 132, 255, 0.4)),
+        linear-gradient(105deg, rgba(94, 177, 191, 0.2), rgba(4, 42, 43, 0.2), rgba(93, 87, 107, 0.2), rgba(136, 132, 255, 0.2));
+    background-size: 300% 300%;
+    animation: wave-animation 20s ease-in-out infinite;
+    background-blend-mode: multiply;
+}
+
+@keyframes wave-animation {
+
+    0%,
+    100% {
+        background-position: 50% 0%;
+    }
+
+    25% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    75% {
+        background-position: 100% 50%;
+    }
+}
+
+li {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: 20px;
+    text-decoration: none;
+    list-style-type: none;
+    cursor: pointer;
+}

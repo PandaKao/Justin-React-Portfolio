@@ -1,6 +1,8 @@
+import Box from '@mui/material/Box';
+
 export default function AboutMe() {
     return (
-        <div>
+        <Box sx={{height: '100vh'}}>
             <h2 id='about'>About Me</h2>
             <p>
                 Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
@@ -10,6 +12,6 @@ export default function AboutMe() {
                 imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
                 in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
             </p>
-        </div>
+        </Box>
     );
 }
