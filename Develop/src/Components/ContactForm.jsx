@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid2';
@@ -33,12 +32,10 @@ export default function ContactForm() {
             setNotification({ message: 'Please enter a name.', color: 'red' });
             return false;
         }
-
         if (!validateEmail(email)) {
             setNotification({ message: 'Please enter a valid email.', color: 'red' });
             return false;
         }
-
         if (!message.trim()) {
             setNotification({ message: 'Message cannot be empty.', color: 'red' });
             return false;
@@ -47,9 +44,27 @@ export default function ContactForm() {
         return true;
     }
 
+    //validate individual fields
+    const validateField = (fieldName, value) => {
+        let errorMessage = '';
+
+        if (fieldName === 'fullName' && !value.trim()) {
+            errorMessage = 'Please enter a name.';
+        } else if (fieldName === 'email' && !validateEmail(value)) {
+            errorMessage = 'Please enter a valid email.';
+        } else if (fieldName === 'message' && !value.trim()) {
+            errorMessage = 'Message cannot be empty.';
+        }
+        if (errorMessage) {
+            setNotification({ message: errorMessage, color: 'red' });
+        } else {
+            setNotification({ message: '', color: '' });
+        }
+    };
+
     //update form validity whenever formState changes
     useEffect(() => {
-        setIsFormValid(fullName.trim() !== '' && email !== '' && message.trim() !== '');
+        setIsFormValid(fullName.trim() !== '' && validateEmail(email) && message.trim() !== '');
     }, [formState]);
 
     //scroll to notification when it changes
@@ -66,7 +81,7 @@ export default function ContactForm() {
             .then(
                 () => {
                     console.log('SUCCESS!');
-                    setNotification({ message: 'Email sent successfully!', color: 'black' }); //change this color to match style
+                    setNotification({ message: 'Email sent successfully!', color: '#ffffff' }); //change this color to match style
                     setFormState({ fullName: '', email: '', message: '' });
                     fullNameRef.current?.blur();
                     emailRef.current?.blur();
@@ -119,35 +134,36 @@ export default function ContactForm() {
                     backgroundColor: 'rgba(255, 255, 255, 0.4)',
                 }}
             >
-                <Typography component='h1' variant='h5'>
+                <Typography component='h5' variant='h5'>
                     Contact Me
                 </Typography>
                 <Box ref={formRef} component='form' noValidate onSubmit={handleSubmit} sx={{ mt: 3, width: '100%' }}>
                     <Grid container spacing={2}>
-                        <Grid item size={{xs: 12}}>
+                        <Grid size={{ xs: 12 }}>
                             <TextField
                                 name='fullName'
                                 required
                                 fullWidth
                                 value={fullName}
                                 onChange={handleInputChange}
+                                onBlur={() => validateField('fullName', fullName)}
                                 label='Full Name'
-                                autoFocus
                                 inputRef={fullNameRef}
                             />
                         </Grid>
-                        <Grid item size={{ xs: 12 }}>
+                        <Grid size={{ xs: 12 }}>
                             <TextField
                                 name='email'
                                 required
                                 fullWidth
                                 value={email}
                                 onChange={handleInputChange}
+                                onBlur={() => validateField('email', email)}
                                 label='Email Address'
                                 inputRef={emailRef}
                             />
                         </Grid>
-                        <Grid item size={{ xs: 12 }}>
+                        <Grid size={{ xs: 12 }}>
                             <TextField
                                 name='message'
                                 required
@@ -156,13 +172,14 @@ export default function ContactForm() {
                                 type='text'
                                 value={message}
                                 onChange={handleInputChange}
+                                onBlur={() => validateField('message', message)}
                                 multiline minRows={4}
                                 inputRef={messageRef}
                             />
                         </Grid>
                     </Grid>
                     <Grid container spacing={2} justifyContent='space-between' style={{ marginTop: 20 }}>
-                        <Grid item>
+                        <Grid>
                             <Button
                                 type='reset'
                                 variant='contained'
@@ -170,7 +187,7 @@ export default function ContactForm() {
                                 Reset
                             </Button>
                         </Grid>
-                        <Grid item>
+                        <Grid>
                             <Button
                                 type='submit'
                                 variant='contained'

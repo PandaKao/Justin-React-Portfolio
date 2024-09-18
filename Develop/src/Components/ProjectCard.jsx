@@ -11,7 +11,7 @@ import Chip from '@mui/material/Chip';
 const styles = {
     card: {
       background: 'transparent',
-      borderRadius: 2,
+      borderRadius: 6,
       border: '1px solid #000',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
     },

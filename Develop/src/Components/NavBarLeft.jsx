@@ -22,7 +22,7 @@ const styles = {
   container: {
     position: 'fixed',
     left: '2rem',
-    top: '65%', // adjust this number to center
+    top: '70%', // adjust this number to center
     transform: 'translateY(-50%)',
     height: '100vh',
     display: 'flex',
@@ -46,6 +46,10 @@ const styles = {
   fab: {
     background: 'transparent',
     boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)',
+    color: '#ffffff',
+    '&:hover': {
+      backgroundColor: '#000000',
+  }
   },
 };
 

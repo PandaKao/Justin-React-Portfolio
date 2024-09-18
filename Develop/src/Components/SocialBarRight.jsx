@@ -1,3 +1,4 @@
+import React from 'react';
 import Fab from '@mui/material/Fab';
 import Box from '@mui/material/Box';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -9,7 +10,7 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 const socialIcons = [
     { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com/PandaKao' },
     { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/justin-kao-90099a322/' },
-    { icon: <SaveAltIcon />, label: 'Resumé', href: '#' },
+    { icon: <SaveAltIcon />, label: 'Resumé', href: '#' }, //TODO: need to link resume
 ];
 
 const StyledTooltip = styled(({ className, ...props }) => (

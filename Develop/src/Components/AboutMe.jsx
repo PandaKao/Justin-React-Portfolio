@@ -1,9 +1,10 @@
 import Box from '@mui/material/Box';
+//Todo: write an actual about me
 
 export default function AboutMe() {
     return (
-        <Box sx={{height: '100vh'}}>
-            <h2 id='about'>About Me</h2>
+        <Box id='about' sx={{ padding: 4, height: '100vh' }}>
+            <h2>About Me</h2>
             <p>
                 Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
                 Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed

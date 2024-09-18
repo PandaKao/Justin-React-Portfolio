@@ -5,6 +5,7 @@ import Header from './Components/Header.jsx';
 import AboutMe from './Components/AboutMe.jsx'
 import Projects from './Components/Projects.jsx';
 import ContactForm from './Components/ContactForm.jsx';
+import Footer from './Components/Footer.jsx';
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -48,16 +49,17 @@ function App() {
         <CssBaseline />
         <main>
           <Grid container spacing={2}>
-            <Grid item size={{ xs: 1 }}>
+            <Grid size={{ xs: 1 }}>
               <NavBarLeft />
             </Grid>
-            <Grid item size={{ xs: 10 }}>
+            <Grid size={{ xs: 10 }}>
               <Header />
               <AboutMe />
               <Projects />
               <ContactForm />
+              <Footer />
             </Grid>
-            <Grid item size={{ xs: 1 }}>
+            <Grid size={{ xs: 1 }}>
               <SocialBarRight />
             </Grid>
           </Grid>

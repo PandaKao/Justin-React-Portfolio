@@ -1,15 +1,16 @@
-#root {
-    margin: 0;
-    padding: 2rem;
+:root {
+    --title-gradient: linear-gradient(90deg, #239982 -1.88%, #6d64d3 104.56%);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h6 {
+    background: var(--title-gradient); /* Gradient background */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback color */
+    margin: 0;
+}
+p,h5 {
     color: white;
     margin: 0;
 }
@@ -20,19 +21,9 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 500;
     margin-bottom: 1rem;
-}
-
-h3 {
-    font-size: 1rem;
-    font-weight: 300;
-}
-
-.intro {
-    margin-top: 12rem;
-    margin-bottom: 18rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -41,40 +32,7 @@ h3 {
         margin-bottom: 1rem;
     }
 
-    .name {
-        font-size: 1rem;
-    }
-
-    .intro {
-        margin-top: 6rem;
-        margin-bottom: 6rem;
-    }
-
 }
-
-/* body {
-    background: linear-gradient(200deg,#5EB1BF,#042A2B, #5D576B, #8884FF);
-    background-size: 240% 240%;
-    animation: gradient-animation 18s ease infinite;
-  }
-  
-  @keyframes gradient-animation {
-    0% {
-        background-position: 50% 0%;
-      }
-      25% {
-        background-position: 50% 50%;
-      }
-      50% {
-        background-position: 50% 100%;
-      }
-      75% {
-        background-position: 50% 50%;
-      }
-      100% {
-        background-position: 50% 0%;
-      }
-  } */
 
 body {
     background:
@@ -83,7 +41,7 @@ body {
         linear-gradient(105deg, rgba(94, 177, 191, 0.4), rgba(4, 42, 43, 0.4), rgba(93, 87, 107, 0.4), rgba(136, 132, 255, 0.4)),
         linear-gradient(105deg, rgba(94, 177, 191, 0.2), rgba(4, 42, 43, 0.2), rgba(93, 87, 107, 0.2), rgba(136, 132, 255, 0.2));
     background-size: 300% 300%;
-    animation: wave-animation 20s ease-in-out infinite;
+    animation: wave-animation 15s ease-in-out infinite;
     background-blend-mode: multiply;
 }
 
@@ -113,5 +71,4 @@ li {
     margin-right: 20px;
     text-decoration: none;
     list-style-type: none;
-    cursor: pointer;
 }
