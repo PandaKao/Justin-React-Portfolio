@@ -6,15 +6,15 @@ import WeatherForecast from '../assets/images/WeatherForecast.png';
 
 
 const projectData = [
-    // {
-    //     //need to fill with image, title, github link, website, chip
-    //     img: Portfolio,
-    //     title: 'Portfolio',
-    //     description: 'A personal portfolio built with React, showcasing a diverse range of projects.',
-    //     github: 'https://github.com/PandaKao/Justin-React-Portfolio',
-    //     website: 'https://placedog.net/500',
-    //     chips: ['React.js', 'Material UI']
-    // },
+    {
+        //need to fill with image, title, github link, website, chip
+        img: './portfolio.png',
+        title: 'Portfolio',
+        description: 'A personal portfolio built with React, showcasing a diverse range of projects.',
+        github: 'https://github.com/PandaKao/Justin-React-Portfolio',
+        website: 'https://placedog.net/500',
+        chips: ['React.js', 'Material UI']
+    },
     {
         img: Picturific,
         title: 'Picturific',
