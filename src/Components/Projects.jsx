@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid2';
 import ProjectCard from './ProjectCard.jsx';
-import Portfolio from '../assets/images/Portfolio.png';
+import Portfolio from '../assets/images/portfolio.png';
 import WeatherForecast from '../assets/images/WeatherForecast.png';
 import Picturific from '../assets/images/Picturific-index-home.png';
 
