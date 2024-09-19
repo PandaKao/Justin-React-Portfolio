@@ -26,6 +26,7 @@ const styles = {
     transform: 'translateY(-50%)',
     height: '100vh',
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   items: {

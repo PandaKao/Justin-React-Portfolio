@@ -9,7 +9,7 @@ const projectData = [
         //need to fill with image, title, github link, website, chip
         img: Portfolio,
         title: 'Portfolio',
-        description: 'A personal portfolio built with React, showcasing a diverse range of projects',
+        description: 'A personal portfolio built with React, showcasing a diverse range of projects.',
         github: 'https://github.com/PandaKao/Justin-React-Portfolio',
         website: 'https://placedog.net/500',
         chips: ['React.js', 'Material UI']
@@ -17,15 +17,15 @@ const projectData = [
     {
         img: Picturific,
         title: 'Picturific',
-        description: 'A personal portfolio built with React, showcasing a diverse range of projects',
-        github: 'https://placedog.net/500',
+        description: 'Picturific is a photo management application allowing users to tag, organize, and view their images.',
+        github: 'https://github.com/PandaKao/Picturific',
         website: 'https://pandakao.github.io/Picturific/',
         chips: ['Bootstrap', 'HTML', 'CSS']
     },
     {
         img: WeatherForecast,
         title: '5 Day Forecast',
-        description: 'A personal portfolio built with React, showcasing a diverse range of projects',
+        description: 'A weather application that provides a detailed 5-day forecast displaying key information such as temperature and weather conditions.',
         github: 'https://github.com/PandaKao/5-Day-Forecast',
         website: 'https://five-day-forecast.onrender.com',
         chips: ['TypeScript', 'Node.js', 'HTML', 'CSS']
