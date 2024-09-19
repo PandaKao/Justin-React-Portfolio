@@ -1,8 +1,8 @@
 import Grid from '@mui/material/Grid2';
 import ProjectCard from './ProjectCard.jsx';
-import Picturific from '../assets/images/Picturific-index-home.png';
+// import Picturific from '../assets/images/Picturific-index-home.png';
 // import Portfolio from '../assets/images/portfolio.png';
-import WeatherForecast from '../assets/images/WeatherForecast.png';
+// import WeatherForecast from '../assets/images/WeatherForecast.png';
 
 
 const projectData = [
@@ -16,7 +16,7 @@ const projectData = [
         chips: ['React.js', 'Material UI']
     },
     {
-        img: Picturific,
+        img: './Picturific-index-home.png',
         title: 'Picturific',
         description: 'Picturific is a photo management application allowing users to tag, organize, and view their images.',
         github: 'https://github.com/PandaKao/Picturific',
@@ -24,7 +24,7 @@ const projectData = [
         chips: ['Bootstrap', 'HTML', 'CSS']
     },
     {
-        img: WeatherForecast,
+        img: './WeatherForecast.png',
         title: '5 Day Forecast',
         description: 'A weather application that provides a detailed 5-day forecast displaying key information such as temperature and weather conditions.',
         github: 'https://github.com/PandaKao/5-Day-Forecast',
