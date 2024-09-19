@@ -1,19 +1,20 @@
 import Grid from '@mui/material/Grid2';
 import ProjectCard from './ProjectCard.jsx';
-import Portfolio from '../assets/images/portfolio.png';
-import WeatherForecast from '../assets/images/WeatherForecast.png';
 import Picturific from '../assets/images/Picturific-index-home.png';
+// import Portfolio from '../assets/images/portfolio.png';
+import WeatherForecast from '../assets/images/WeatherForecast.png';
+
 
 const projectData = [
-    {
-        //need to fill with image, title, github link, website, chip
-        img: Portfolio,
-        title: 'Portfolio',
-        description: 'A personal portfolio built with React, showcasing a diverse range of projects.',
-        github: 'https://github.com/PandaKao/Justin-React-Portfolio',
-        website: 'https://placedog.net/500',
-        chips: ['React.js', 'Material UI']
-    },
+    // {
+    //     //need to fill with image, title, github link, website, chip
+    //     img: Portfolio,
+    //     title: 'Portfolio',
+    //     description: 'A personal portfolio built with React, showcasing a diverse range of projects.',
+    //     github: 'https://github.com/PandaKao/Justin-React-Portfolio',
+    //     website: 'https://placedog.net/500',
+    //     chips: ['React.js', 'Material UI']
+    // },
     {
         img: Picturific,
         title: 'Picturific',
