@@ -3,6 +3,7 @@ import ProjectCard from './ProjectCard.jsx';
 // import Picturific from '../assets/images/Picturific-index-home.png';
 // import Portfolio from '../assets/images/portfolio.png';
 // import WeatherForecast from '../assets/images/WeatherForecast.png';
+//put project pngs in public
 
 
 const projectData = [
