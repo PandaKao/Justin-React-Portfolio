@@ -13,7 +13,7 @@ const projectData = [
         title: 'Portfolio',
         description: 'A personal portfolio built with React, showcasing a diverse range of projects.',
         github: 'https://github.com/PandaKao/Justin-React-Portfolio',
-        website: 'https://placedog.net/500',
+        website: 'https://justinkao.netlify.app/',
         chips: ['React.js', 'Material UI']
     },
     {
