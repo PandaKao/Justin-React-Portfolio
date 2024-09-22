@@ -27,7 +27,7 @@ const StyledTooltip = styled(({ className, ...props }) => (
 const styles = {
     container: {
         position: 'fixed',
-        right: '2rem', // Align the icons to the right side of the screen
+        right: '1rem', // Align the icons to the right side of the screen
         top: '50%', // Adjust this value to vertically center the icons
         transform: 'translateY(-50%)',
         display: 'flex',
@@ -41,7 +41,9 @@ const styles = {
         boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)',
         '&:hover': {
             backgroundColor: '#000000',
-        }
+        },
+        width: '3rem',
+        height: '3rem',
     },
 };
 

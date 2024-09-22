@@ -49,13 +49,13 @@ function App() {
         <CssBaseline />
         <main>
           <Grid container spacing={2}>
-            <Grid sx={{justifyContent: 'center', alignItems: 'center'}} size={{ xs: 1 }}>
+            <Grid size={{ xs: 1 }} sx={{justifyContent: 'center', alignItems: 'center'}}>
               <NavBarLeft />
             </Grid>
-            <Grid size={{ xs: 10 }}>
+            <Grid size={{ xs: 10, minHeight: '100vh'}}>
               <Header />
-              <AboutMe />
               <Projects />
+              <AboutMe />
               <ContactForm />
               <Footer />
             </Grid>

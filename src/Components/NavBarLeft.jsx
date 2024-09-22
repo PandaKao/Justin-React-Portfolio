@@ -1,11 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
+import { useMediaQuery } from '@mui/material';
+import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import KeyboardDoubleArrowUpOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowUpOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
+import KeyboardDoubleArrowUpOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowUpOutlined';
 
 const StyledTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -26,10 +29,10 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center', // Center items horizontally
+        alignItems: 'center',
     },
     items: {
-        transform: 'rotate(-90deg)', // make list in reverse order
+        transform: 'rotate(-90deg)',
         transformOrigin: 'center',
         listStyleType: 'none',
         display: 'flex',
@@ -39,7 +42,13 @@ const styles = {
     },
     arrowButton: {
         position: 'fixed',
-        bottom: '2rem',
+        bottom: '1rem',
+        left: '1rem',
+        zIndex: 100,
+    },
+    menuButton: {
+        position: 'fixed',
+        top: '1rem',
         left: '1rem',
         zIndex: 100,
     },
@@ -50,72 +59,115 @@ const styles = {
         '&:hover': {
             backgroundColor: '#000000',
         },
+        width: '3rem',
+        height: '3rem',
     },
+
 };
 
 const navItems = [
     { name: 'Contact Me', target: 'contact' },
-    { name: 'Projects', target: 'projects' },
     { name: 'About', target: 'about' },
+    { name: 'Projects', target: 'projects' },
     { name: 'Home', target: 'home' },
 ];
 
 export default function NavBarLeft() {
     const containerRef = useRef(null);
+    const [openDrawer, setOpenDrawer] = useState(false);
+    const isMobile = useMediaQuery('(max-width:900px)');
 
     useEffect(() => {
-        // Calculates the center position for navbar
         const updatePosition = () => {
             if (containerRef.current) {
-                // Grabs height of browser viewport
                 const viewportHeight = window.innerHeight;
-                // Grabs actual rendered height of navbar
                 const containerHeight = containerRef.current.getBoundingClientRect().height;
                 const centerPosition = (viewportHeight - containerHeight) / 2;
-
-                // Set the top position based on center position
                 containerRef.current.style.top = `${centerPosition}px`;
             }
         };
 
-        // Updates position on resize
         updatePosition();
         window.addEventListener('resize', updatePosition);
-
         return () => {
-            // Cleanup function in case component unmounts
             window.removeEventListener('resize', updatePosition);
         };
     }, []);
 
     return (
-        <nav id='navigation'>
-            <div ref={containerRef} style={styles.container}>
-                <ul style={styles.items}>
-                    {navItems.map((item, index) => (
-                        <li key={index}>
-                            <Button sx={{ color: '#ffffff' }}>
-                                <ScrollLink
-                                    to={item.target}
-                                    spy={true}
-                                    smooth={true}
-                                    duration={500}
-                                >
-                                    {item.name}
-                                </ScrollLink>
-                            </Button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <Box style={styles.arrowButton}>
-                <StyledTooltip title='Back to Top' placement='left' arrow>
-                    <Fab
-                        aria-label='Back to Top'
-                        sx={styles.fab}
+        <nav id="navigation">
+            {isMobile ? (
+                <div>
+                    <Box sx={styles.menuButton}>
+                        <StyledTooltip title='Menu' placement='right' arrow>
+                            <Fab
+                                aria-label='Menu'
+                                sx={styles.fab}
+                                onClick={() => setOpenDrawer(true)}
+                            >
+                                <MenuIcon />
+                            </Fab>
+                        </StyledTooltip>
+                    </Box>
+
+                    <Drawer
+                        anchor="left"
+                        open={openDrawer}
+                        onClose={() => setOpenDrawer(false)}
+                        sx={{
+                            '& .MuiDrawer-paper': {
+                                width: '30%',
+                                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                padding: '1.5rem',
+                            },
+                        }}
                     >
+                        <ul style={{ listStyleType: 'none', padding: 0 }}>
+                            {navItems.slice().reverse().map((item, index) => (
+                                <li key={index}>
+                                    <Button
+                                        sx={{ color: '#ffffff' }}
+                                        onClick={() => setOpenDrawer(false)}
+                                    >
+                                        <ScrollLink
+                                            to={item.target}
+                                            spy={true}
+                                            smooth={true}
+                                            duration={500}
+                                        >
+                                            {item.name}
+                                        </ScrollLink>
+                                    </Button>
+                                </li>
+                            ))}
+                        </ul>
+                    </Drawer>
+                </div>
+            ) : (
+                <div ref={containerRef} style={styles.container}>
+                    <ul style={styles.items}>
+                        {navItems.map((item, index) => (
+                            <li key={index}>
+                                <Button sx={{ color: '#ffffff' }}>
+                                    <ScrollLink
+                                        to={item.target}
+                                        spy={true}
+                                        smooth={true}
+                                        duration={500}
+                                    >
+                                        {item.name}
+                                    </ScrollLink>
+                                </Button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+            <Box style={styles.arrowButton}>
+                <StyledTooltip title="Back to Top" placement="left" arrow>
+                    <Fab aria-label="Back to Top" sx={styles.fab}>
                         <ScrollLink
-                            to='home'
+                            to="home"
                             spy={true}
                             smooth={true}
                             duration={500}
