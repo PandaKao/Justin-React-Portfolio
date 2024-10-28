@@ -14,7 +14,7 @@ const projectData = [
         description: 'A personal portfolio built with React, showcasing a diverse range of projects.',
         github: 'https://github.com/PandaKao/Justin-React-Portfolio',
         website: 'https://justinkao.netlify.app/',
-        chips: ['React.js', 'Material UI']
+        chips: ['React', 'Material UI']
     },
     {
         img: './Picturific-index-home.png',
@@ -30,23 +30,23 @@ const projectData = [
         description: 'A weather application that provides a detailed 5-day forecast displaying key information such as temperature and weather conditions.',
         github: 'https://github.com/PandaKao/5-Day-Forecast',
         website: 'https://five-day-forecast.onrender.com',
-        chips: ['TypeScript', 'Node.js', 'HTML', 'CSS']
+        chips: ['TypeScript', 'Node', 'HTML', 'CSS']
     },
     {
-        img: 'https://placedog.net/497',
-        title: 'Portfolio4',
-        description: 'A personal portfolio built with React, showcasing a diverse range of projects',
-        github: 'https://placedog.net/500',
-        website: 'https://placedog.net/500',
-        chips: ['React.js', 'Material UI']
+        img: './BookSearch.PNG',
+        title: 'Book Search',
+        description: 'Book Search allows users to create an account to search and save books.',
+        github: 'https://github.com/PandaKao/Book-Search-Engine',
+        website: 'https://book-search-engine-1a45e44d3db5.herokuapp.com/',
+        chips: ['TypeScript', 'React', 'Vite', 'MongoDB', 'Apollo Client']
     },
     {
-        img: 'https://placedog.net/496',
-        title: 'Portfolio5',
-        description: 'A personal portfolio built with React, showcasing a diverse range of projects',
-        github: 'https://placedog.net/500',
-        website: 'https://placedog.net/500',
-        chips: ['React.js', 'Material UI']
+        img: './NeighborhoodAid.PNG',
+        title: 'NeighborhoodAid',
+        description: 'NeighborhoodAid is an interactive platform designed to empower communities by enabling users to report local issues like potholes, vandalism, and streetlight outages.',
+        github: 'https://github.com/PandaKao/NeighborhoodAid',
+        website: 'https://neighborhoodaid-6ec75f1006f4.herokuapp.com/',
+        chips: ['React', 'Vite', 'Tailwind CSS', 'Sequelize']
     },
     {
         img: 'https://placedog.net/495',
