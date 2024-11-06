@@ -22,7 +22,7 @@ const projectData = [
         description: 'Picturific is a photo management application allowing users to tag, organize, and view their images.',
         github: 'https://github.com/PandaKao/Picturific',
         website: 'https://pandakao.github.io/Picturific/',
-        chips: ['Bootstrap', 'HTML', 'CSS']
+        chips: ['Bootstrap', 'HTML', 'CSS', 'Swiper']
     },
     {
         img: './WeatherForecast.png',
