@@ -130,7 +130,7 @@ export default function ContactForm() {
                     alignItems: 'center',
                     borderRadius: 2,
                     boxShadow: 10,
-                    width: '60%',
+                    width: '100%',
                     backgroundColor: 'rgba(255, 255, 255, 0.4)',
                 }}
             >
