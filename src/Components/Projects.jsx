@@ -63,7 +63,9 @@ export default function Projects() {
         <Grid container id='projects' spacing={4} sx={{ padding: 4, minheight: '100vh' }}>
             <Grid size={{ xs: 12 }}>
                 <h2>Projects</h2>
-                <p>These are the projects I’ve developed both individually and as part of a team. They challenged me to engage with front-end, back-end, and full-stack development, enabling me to create everything from intuitive user interfaces to comprehensive end-to-end solutions.</p>
+                <p class='main-text'>
+                    These are the projects I’ve developed both individually and as part of a team. They challenged me to engage with front-end, back-end, and full-stack development, enabling me to create everything from intuitive user interfaces to comprehensive end-to-end solutions.
+                </p>
             </Grid>
             <Grid container spacing={4} justifyContent='center' sx={{ flexWrap: 'wrap' }}>
                 {projectData.map((project, index) => (
