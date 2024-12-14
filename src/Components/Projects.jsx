@@ -46,15 +46,15 @@ const projectData = [
         description: 'NeighborhoodAid is an interactive platform designed to empower communities by enabling users to report local issues like potholes, vandalism, and streetlight outages.',
         github: 'https://github.com/PandaKao/NeighborhoodAid',
         website: 'https://neighborhoodaid-6ec75f1006f4.herokuapp.com/',
-        chips: ['React', 'Vite', 'Tailwind CSS', 'Sequelize']
+        chips: ['React', 'Vite', 'Tailwind', 'Sequelize']
     },
     {
-        img: 'https://placedog.net/495',
-        title: 'Portfolio6',
-        description: 'A personal portfolio built with React, showcasing a diverse range of projects',
-        github: 'https://placedog.net/500',
-        website: 'https://placedog.net/500',
-        chips: ['React.js', 'Material UI']
+        img: './DoomsdayDepot.png',
+        title: 'Doomsday Depot',
+        description: `Your one-stop shop for all your post-apocolyptic needs. Browse various categories including tools, weapons, medical, shelter, etc.`,
+        github: 'https://github.com/PandaKao/Doomsday_Depot',
+        website: 'https://doomsday-depot-e3b01e59b096.herokuapp.com/',
+        chips: ['TypeScript', 'React', 'Vite', 'Tailwind', 'GraphQL', 'Express', 'MongoDB', 'Apollo Client']
     },
 ]
 
