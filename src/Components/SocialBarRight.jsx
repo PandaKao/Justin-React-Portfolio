@@ -10,7 +10,7 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 const socialIcons = [
     { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com/PandaKao' },
     { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/justin-kao-90099a322/' },
-    { icon: <SaveAltIcon />, label: 'Resume', href: 'https://drive.google.com/file/d/1wzLswCMm76uTdHGZrzvezPqDfk59GxHK/view?usp=sharing' },
+    { icon: <SaveAltIcon />, label: 'Resume', href: 'https://drive.google.com/file/d/16QWXHzYxslN9L_3bb4OjzcjzDwyF_tY4/view?usp=sharing' },
 ];
 
 const StyledTooltip = styled(({ className, ...props }) => (
